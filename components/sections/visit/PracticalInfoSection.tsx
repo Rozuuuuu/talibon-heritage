@@ -38,10 +38,13 @@ export function PracticalInfoSection() {
                     {row.label}
                   </span>
 
-                  {"primaryLines" in row && row.primaryLines ? (
+                  {row.kind === "multi" ? (
                     <div className="flex flex-col gap-1 text-ink">
                       {row.primaryLines.map((line) => (
-                        <span key={line.prefix} className="font-body-md text-body-md">
+                        <span
+                          key={line.prefix}
+                          className="font-body-md text-body-md"
+                        >
                           <span className="font-semibold">{line.prefix}</span>
                           {line.value}
                         </span>
@@ -55,7 +58,7 @@ export function PracticalInfoSection() {
 
                   <span
                     className={
-                      "small" in row && row.small
+                      row.small
                         ? "font-body-sm text-body-sm text-ink-muted"
                         : "font-serif-aside text-[15px] italic text-ink-muted"
                     }
@@ -77,9 +80,7 @@ export function PracticalInfoSection() {
           </div>
 
           {/* Right: framed plate */}
-          <ScrollReveal
-            className="mt-space-xl flex flex-col justify-between lg:col-span-7 lg:mt-0"
-          >
+          <ScrollReveal className="mt-space-xl flex flex-col justify-between lg:col-span-7 lg:mt-0">
             <div className="group relative flex h-full min-h-[460px] w-full flex-col justify-between border border-line bg-paper-deep p-space-sm">
               <div className="relative w-full flex-1 overflow-hidden">
                 <img

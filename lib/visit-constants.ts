@@ -40,11 +40,14 @@ export const PRACTICAL_INFO = {
   right: "( liturgical schedule & protocols )",
   rows: [
     {
+      kind: "single" as const,
       label: "LOCATION",
       primary: "Barangay Poblacion, Talibon, Bohol",
       secondary: "Adjacent to the municipal seawall and parish convent.",
+      small: false,
     },
     {
+      kind: "multi" as const,
       label: "MASS TIMES",
       primaryLines: [
         { prefix: "Daily:", value: " 6:00 AM" },
@@ -54,8 +57,10 @@ export const PRACTICAL_INFO = {
         },
       ],
       secondary: "Visayan & English liturgy with native acoustic choir.",
+      small: false,
     },
     {
+      kind: "single" as const,
       label: "HISTORICAL TOURS",
       primary: "Monday – Friday, 8:00 AM – 5:00 PM",
       secondary:
@@ -63,10 +68,12 @@ export const PRACTICAL_INFO = {
       small: true,
     },
     {
+      kind: "single" as const,
       label: "DRESS CODE",
       primary: "Modest attire required",
       secondary:
         "Shoulders and knees must remain covered inside consecrated coral-stone chambers.",
+      small: false,
     },
   ],
   archivalNoteLabel: "ARCHIVAL ACCESS NOTE",
